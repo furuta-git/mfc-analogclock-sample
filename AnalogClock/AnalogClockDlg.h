@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include "CClock.h"
 
 class CAnalogClockDlg : public CDialogEx
 {
@@ -18,4 +19,6 @@ protected:
 	DECLARE_MESSAGE_MAP()
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
+
+	CClock m_Clock;
 };

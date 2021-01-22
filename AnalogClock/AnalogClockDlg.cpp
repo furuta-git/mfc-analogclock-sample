@@ -17,6 +17,7 @@ CAnalogClockDlg::CAnalogClockDlg(CWnd* pParent /*=nullptr*/)
 void CAnalogClockDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_CLOCK, m_Clock);
 }
 
 BOOL CAnalogClockDlg::OnInitDialog()
@@ -25,6 +26,10 @@ BOOL CAnalogClockDlg::OnInitDialog()
 
 	SetIcon(m_hIcon, TRUE);
 	SetIcon(m_hIcon, FALSE);
+
+	CRect rc;
+	this->GetClientRect(rc);
+	this->m_Clock.MoveWindow(0, 0, rc.Width(), rc.Height());
 
 	return TRUE;
 }
